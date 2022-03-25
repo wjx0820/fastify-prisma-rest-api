@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "esno src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
+    "esno": "^0.14.1",
     "tsup": "^5.12.1",
     "typescript": "^4.6.3"
   }
