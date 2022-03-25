@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@egoist/prettier-config': ^1.0.0
   '@prisma/client': ^3.11.1
   '@types/node': ^17.0.23
   esno: ^0.14.1
@@ -23,12 +24,17 @@ dependencies:
   zod-to-json-schema: 3.11.3
 
 devDependencies:
+  '@egoist/prettier-config': 1.0.0
   '@types/node': 17.0.23
   esno: 0.14.1
   tsup: 5.12.1_typescript@4.6.3
   typescript: 4.6.3
 
 packages:
+
+  /@egoist/prettier-config/1.0.0:
+    resolution: {integrity: sha512-D1Tp9Jv4aVoEo3cOAO966gFCI0wx/1lZ6sEHX8uMAfyVxuxD2+knGxhfGlb/FNLxWV3ifSI5hOmB/zFfsi7Rzw==}
+    dev: true
 
   /@fastify/ajv-compiler/1.1.0:
     resolution: {integrity: sha512-gvCOUNpXsWrIQ3A4aXCLIdblL0tDq42BG/2Xw7oxbil9h11uow10ztS2GuFazNBfjbrsZ5nl+nPl5jDSjj5TSg==}
