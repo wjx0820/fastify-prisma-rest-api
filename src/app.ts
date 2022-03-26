@@ -1,11 +1,14 @@
 import Fastify, { FastifyRequest, FastifyReply } from "fastify"
 import fjwt from "fastify-jwt"
 import "dotenv/config"
+import swagger from "fastify-swagger"
+import { withRefResolver } from "fastify-zod"
 
 import userRoutes from "./modules/user/user.route"
 import productRoutes from "./modules/product/product.route"
 import { userSchemas } from "./modules/user/user.schema"
 import { productSchemas } from "./modules/product/product.schema"
+import { version } from "../package.json"
 
 declare module "fastify" {
   export interface FastifyInstance {
@@ -49,6 +52,22 @@ async function main() {
   for (const schema of [...userSchemas, ...productSchemas]) {
     server.addSchema(schema)
   }
+
+  server.register(
+    swagger,
+    withRefResolver({
+      routePrefix: "/docs",
+      exposeRoute: true,
+      staticCSP: true,
+      openapi: {
+        info: {
+          title: "Fastify API",
+          description: "API Documentation",
+          version: version,
+        },
+      },
+    }),
+  )
 
   server.register(userRoutes, { prefix: "api/users" })
   server.register(productRoutes, { prefix: "api/products" })
